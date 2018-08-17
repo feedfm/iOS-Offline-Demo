@@ -1,0 +1,22 @@
+PODS:
+  - FeedMedia (4.2.0-beta):
+    - MarqueeLabel (~> 3.1.4)
+  - MarqueeLabel (3.1.6):
+    - MarqueeLabel/ObjC (= 3.1.6)
+  - MarqueeLabel/ObjC (3.1.6)
+
+DEPENDENCIES:
+  - FeedMedia (~> 4.2.0-beta)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FeedMedia
+    - MarqueeLabel
+
+SPEC CHECKSUMS:
+  FeedMedia: 4c80edcd25ceed129eebaf220806cc06ac37e11f
+  MarqueeLabel: 0c41f08ef5773e29c0f71064a8fa788a2fd8b365
+
+PODFILE CHECKSUM: f1252f1c9d47375630e5452cb22fa8c3b016462c
+
+COCOAPODS: 1.5.3
