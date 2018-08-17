@@ -9,6 +9,13 @@ same controls as streaming music stations. Reporting of offline
 music playback is handled invisibly by the SDK when Internet connectivity
 is available.
 
+### SDK
+
+Version 4.2.0-beta of the iOS SDK has offline support. The Appledocs
+for this version are at http://demo.feed.fm/sdk/docs/ios/4.2.0-beta/html/
+and the best way to get the library is via CocoaPods (use 'FeedMedia'
+version '4.2.0-beta' or Carthage (use 'github "feedfm/iOS-SDK"').
+
 ### Overview
 
 In previous versions of the SDK, the `stationList` property of the
