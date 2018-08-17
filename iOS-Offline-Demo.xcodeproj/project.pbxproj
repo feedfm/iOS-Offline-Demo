@@ -14,6 +14,7 @@
 		A99483C92127834A009CE4B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99483C82127834A009CE4B5 /* Assets.xcassets */; };
 		A99483CC2127834A009CE4B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99483CA2127834A009CE4B5 /* LaunchScreen.storyboard */; };
 		A99483CF2127834A009CE4B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99483CE2127834A009CE4B5 /* main.m */; };
+		A99483D621278FF1009CE4B5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A99483D521278FF1009CE4B5 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A99483CB2127834A009CE4B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A99483CD2127834A009CE4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99483CE2127834A009CE4B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A99483D521278FF1009CE4B5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		A99483B321278348009CE4B5 = {
 			isa = PBXGroup;
 			children = (
+				A99483D521278FF1009CE4B5 /* README.md */,
 				A99483BE21278348009CE4B5 /* iOS-Offline-Demo */,
 				A99483BD21278348009CE4B5 /* Products */,
 				3EB56F662E2FDD8ECCB7C521 /* Pods */,
@@ -155,6 +158,7 @@
 			files = (
 				A99483CC2127834A009CE4B5 /* LaunchScreen.storyboard in Resources */,
 				A99483C92127834A009CE4B5 /* Assets.xcassets in Resources */,
+				A99483D621278FF1009CE4B5 /* README.md in Resources */,
 				A99483C721278348009CE4B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,15 +171,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-iOS-Offline-Demo-checkManifestLockResult.txt",
 			);

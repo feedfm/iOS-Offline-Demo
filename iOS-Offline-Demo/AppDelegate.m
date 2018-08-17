@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <FeedMedia/FeedMedia.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <FMStationDownloadDelegate>
 
 @end
 
@@ -16,8 +17,46 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // initialize feed.fm and pull in list of remote offline stations
+    [FMAudioPlayer setClientToken:@"offline" secret:@"offline"];
+    
+    [[FMAudioPlayer sharedPlayer] whenAvailable:^{
+        // streaming stations are available here, as is the list of downloadable stations
+        FMAudioPlayer *player = [FMAudioPlayer sharedPlayer];
+        
+        // list out stations available for download
+        for (FMStation *station in player.remoteOfflineStationList) {
+            NSLog(@"offline station: %@", station.name);
+        }
+        
+        // download/update the first available offline station
+        FMStation *station = player.remoteOfflineStationList[0];
+        [player downloadAndSyncStation:station withDelegate:self];
+        
+    } notAvailable:^{
+        // couldn't contact feed.fm - we must be offline!
+        FMAudioPlayer *player = [FMAudioPlayer sharedPlayer];
+        
+        // play the first station we've downloaded
+        if (player.localOfflineStationList.count > 0) {
+            player.activeStation = player.localOfflineStationList[0];
+            [player play];
+        }
+    }];
+    
     return YES;
+}
+
+
+- (void)stationDownloadComplete:(FMStation *)station {
+    FMAudioPlayer *player = [FMAudioPlayer sharedPlayer];
+
+    player.activeStation = station;
+    [player play];
+}
+
+- (void)stationDownloadProgress:(FMStation *)station pendingCount:(int)pendingCount failedCount:(int)failedCount totalCount:(int)totalCount {
+    NSLog(@"Station download in progress.. %d of %d files remaining to download", pendingCount, totalCount);
 }
 
 
@@ -46,6 +85,5 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
 
 @end
