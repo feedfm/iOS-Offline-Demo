@@ -170,8 +170,8 @@ There is a variant of the downloading function called
 argument is used to ask the server to limit the amount of music transferred
 during this request. If the app only plans to play up to 10 minutes of
 music while offline, this number can be passed to the server to ensure the
-app doesn't download the full contents of the offline station all at once.
-The SDK might not download any music if it already has enough. The SDK might
-download 10 minutes of music, even if it already has music, to swap out
-old songs the user has heard with newer songs.
+app doesn't download the full contents of a potentially large offline station
+all at once. The SDK might not download any music if it already has enough.
+The SDK might download 10 minutes of music, even if it already has music,
+to swap out old songs the user has heard with newer songs.
 
